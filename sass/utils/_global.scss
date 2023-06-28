@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header{
+    font-family: 'Lato', sans-serif;
+    background-color: $navAndFoterColor;
+    width: 100%;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    display: grid;
+    grid-template-rows:auto 1fr auto;
+    min-height: 100vh;
+}
+
+main{
+    background-image: url("../assets/images/contact_fondo1.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+footer
+{
+    font-family: 'Lato', sans-serif;
+} 
+
+p {
+    line-height: 1.5;
+}
+/* Barra navegación */
+
+ul {
+    list-style-type: none;
+
+    & a{
+        text-decoration: none;
+    
+        &:link{
+            color: $linkColorPrimary;
+        }
+
+        &:visited{
+            color: $linkColorPrimary;
+        }
+
+        &:hover{
+            color: $linkColorPrimary;
+            background-color: rgb(255, 255, 255);
+            transition: background-color .5s;
+            border-radius: $borderRadius;
+        }
+
+        &a:active{
+            color: $linkColorPrimary;
+        }
+    } 
+}
+//extend
+
+.defaultborder{
+    border-color: $borderColorPrimary;
+    border-radius: $borderRadius;
+    border-style: solid;
+}
+
+.defaultcontainer{
+    @extend .defaultborder;
+    box-shadow: $boxShadow;
+    background-color: $bgColorPrimary;
+    transition: $bgColorPrimary;
+    transition: $transition;
+
+    &:hover{
+        background-color: $bgColorSecondary;
+    }
+}
+
+.textborder{
+    text-shadow: 
+    1px  0px 0px black,
+    0px  1px 0px black,
+   -1px  0px 0px black,
+    0px -1px 0px black;
+}
+
+@mixin templateGrid($bp, $colDesktop) {
+    // vista mobile
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+
+    // vista desktop
+    @media (min-width: $bp) {
+        grid-template-columns: repeat($colDesktop, 1fr);
+    }
+}
+
+@mixin templateFlex($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+
+    @if ($align == true) {
+        align-items: center;
+    }
+}

@@ -1,0 +1,129 @@
+/* proyectos */
+.prjtittle{
+    margin: $marginCenterX;
+    max-width: $maxWidht;
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    color: $textColorPrimary;
+}
+
+.prjcontainer{
+    margin: $marginCenterX;
+    max-width: $maxWidht;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+    padding: 0 20px;
+    align-items: center;
+    
+
+}
+.prjcard{
+    max-width: $maxWidht;
+    @extend .defaultborder;
+    padding: 10px 10px;
+    box-shadow: $boxShadow;
+    @include templateFlex(column, space-between, false);
+    transition: $transition;
+    height: 100%;
+    color: $textColorPrimary;
+    background-color: $bgColorPrimary;
+    &:hover{
+        background-color: $bgColorSecondary;
+    }
+
+    &__tittleinfo{
+        @include templateFlex(row, space-between, false);
+        padding-top: 5px;
+        &-tittle{
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            
+        }
+    }
+
+    &__desc{
+        text-align: justify;
+    }
+
+    &__tecn{
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    &__row{
+        @include templateFlex(row, auto, false);
+        margin: 5px 0;
+
+        &-type{
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        &-p{
+            margin-bottom: 5px;
+            padding-left: 10px;
+
+        }
+    }
+    &__carousel {
+        max-width: $maxWidht;
+        margin: $marginCenterX;
+    }
+
+    &__carouseldesing h5{
+        color: black;
+        background-color: rgb(255, 255, 255,0.5);
+        border-radius: $borderRadius;
+    }
+
+    &__carouseldesing p{
+        color: black;
+        background-color: rgb(255, 255, 255,0.5);
+        border-radius: $borderRadius;
+    }
+}
+
+
+.header__prjmoreinfo{
+    max-width: $maxWidht;
+    margin: 60px auto;
+    text-align: center;
+    color: $textColorPrimary;
+    @extend.textborder;
+    
+    & a{
+        color: $linkColorPrimary;
+        text-decoration: none;
+    }
+}
+
+
+
+/* MEDIA QUERIES */
+@media (min-width: $bpMedium) {
+
+    .prjcontainer {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+    .prjcard{
+        &:hover{
+            translate: 10px;
+        }
+    }
+}
+
+@media (min-width: $bpLarge) {
+
+    .prjcontainer {
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+    }
+
+}

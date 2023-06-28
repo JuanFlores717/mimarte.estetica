@@ -1,0 +1,14 @@
+{
+  "name": "20230628",
+  "version": "1.0.0",
+  "description": "Mimarte Estetica",
+  "main": "index.js",
+  "scripts": {
+    "build-sass": "sass ./sass/main.scss ./css/main.css -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.63.6"
+  }
+}

@@ -1,0 +1,110 @@
+
+/* Conctacto */
+
+.formcontainer{
+    padding: 0 20px;
+    margin: $marginCenterX;
+    max-width: $maxWidht;
+    
+    &__tittle{
+        font-size: 40px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: $textColorPrimary;
+    }
+
+    &__data{
+        max-width: $maxWidht;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+
+        &-datain{
+            color: $textColorPrimary;
+            max-width: 600px;
+            padding: 10px;
+            border: $linkColorPrimary;
+            border-radius: $borderRadius;
+            border-style: solid;
+            margin-right: 40px;
+            box-shadow: $boxShadow;
+            background-color: $bgColorPrimary;
+            transition: $bgColorPrimary;
+            transition: $transition;
+
+            &:hover{
+                background-color: $bgColorSecondary;
+            }
+
+            &-formline{
+                padding:10px 10px;
+                border: rgb(68, 162, 248, 0.3);
+                border-radius: $borderRadius;
+                border-style: solid;
+                margin: 5px 0;
+
+
+                &-coment{
+                    padding: 0 10px;
+                    display: block;
+                    width: 100%;
+                }
+
+                &-label{
+                    font-size: 18px;
+                    display: block;
+                    width: 100%;
+                }
+
+                &-input{
+                    margin-bottom: 10px;
+                    padding: 0 10px;
+                    text-align: start;
+                    display: block;
+                    width: 100%;
+                }
+            }
+
+            &-submit{
+                margin-top: 10px;
+                padding: 5px;
+            }
+        }
+
+        &-img{
+            display: none;
+        }
+    }
+
+}
+
+/* MEDIA QUERIES */
+@media (min-width: $bpMedium) {
+
+    .formcontainer__data-img{
+        max-height: 350px;
+    }
+
+}
+
+@media (min-width: $bpLarge) {
+
+    .formcontainer__data{
+        display: flex;
+
+        &-datain{
+            width: 600px;
+        }
+        &-img{
+            display: block;
+            max-height: 450px;
+        }
+    }
+
+}
+
+@media (min-width: $bpExtraLarge) {
+    .formcontainer__data-img{
+        max-height: 500px;
+    }
+}

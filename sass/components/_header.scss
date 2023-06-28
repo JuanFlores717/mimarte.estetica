@@ -1,0 +1,41 @@
+
+.navcontainer__mobile{
+    font-size:20px;
+    margin: 5px;
+}
+
+.navcontainer__desktop{
+    display: none;
+    font-size:20px;
+    margin: 5px;
+}
+
+
+.header {
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.navcontainer{
+    max-width: $maxWidht;
+    margin: $marginCenterX;
+    @include templateFlex(row, space-between, false);
+    align-items: center;
+}
+
+.navcontainer__mobile-img{
+    margin-top:35px;
+}
+
+
+/* MEDIA QUERIES */
+@media (min-width: $bpMedium) {
+    .navcontainer__desktop{
+        display: flex;
+    }
+    .navcontainer__mobile{
+        display: none;
+    }
+}
